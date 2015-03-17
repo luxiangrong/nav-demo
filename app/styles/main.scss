@@ -18,7 +18,17 @@ ul {
     width: 1000px;
     margin: 0 auto;
     position: relative;
+    .content-img {
+        position: absolute;
+        top: 120px;
+        left: 0;
+    }
 }
+
+a {
+    text-decoration: none;
+}
+
 .menu {
     font-size: 15px;
     color: #1F1F1F;
@@ -34,7 +44,6 @@ ul {
         border-radius: 8px 8px 0 0;
         > a {
             color: #1F1F1F;
-            text-decoration: none;
             &:hover, &:focus {
                 color: #004699;
                 font-weight: bold;
@@ -50,21 +59,52 @@ ul {
         }
     }
 }
+
+.secondary-wrap {
+    z-index: 99;
+    width: 960px;
+    position: absolute;
+    left: -2px;
+    top: 42px;
+    text-align: left;
+    padding: 20px;
+    font-size: 14px;
+    background: url(../images/bg01.png) repeat-y center center;
+    border: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+    display: none;
+    .secondary-outer {
+        background: url(../images/bg03.png) repeat-y center center;
+        overflow: hidden;
+    }
+}
+
 ul {
-    &.sub {
-        z-index: 99;
-        width: 960px;
-        position: absolute;
-        left: 0;
-        top: 44px;
-        text-align: left;
-        background-color: #F4F4F4;
-        padding: 20px;
-        border: 1px solid #dcdcdc;
-        border-radius: 8px;
+    &.secondary {
+        float: left;
+        width: 25%;
         > li {
-            width: 25%;
-            float: left;
+            line-height: 2;
+            vertical-align: top;
+            padding-left: 1em;
+            > a {
+                color: #004699;
+            }
+            > ul.thirdly {
+                font-size: 12px;
+                list-style: disc;
+                list-style-position: inside;
+                display: none;
+                > li {
+                    > a {
+                        color: #666666;
+                    }
+                }
+            }
+            &:hover {
+                > ul.thirdly {
+                }
+            }
         }
     }
 }
