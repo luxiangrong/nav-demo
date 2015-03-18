@@ -38,6 +38,8 @@ a {
     position: relative;
     > li {
         display: inline-block;
+        *display:inline; /* IE6、7 block 元素 */
+        *zoom:1;
         border: 1px solid transparent;
         border-bottom: none;
         padding: 12px;
@@ -58,14 +60,16 @@ a {
             }
         }
     }
-}
+  }
 
 .secondary-wrap {
     z-index: 99;
     width: 960px;
     position: absolute;
     left: -2px;
-    top: 42px;
+    top: 44px;
+    top: 41px\9;
+    *top: 64px;
     text-align: left;
     padding: 20px;
     font-size: 14px;
